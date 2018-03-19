@@ -13,7 +13,7 @@ class GreetingServiceTest {
         GreetingService service = new GreetingService();
 
         // when
-        Greeting greeting = service.getGreeting();
+        Greeting greeting = service.getGreetings();
 
         // then
         assertNotNull(greeting);
