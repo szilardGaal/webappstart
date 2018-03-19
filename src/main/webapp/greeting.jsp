@@ -14,6 +14,8 @@
 <% for (Greeting g : greetings) { %>
     <p><%= g.getLang() %>: <%= g.getText() %></p>
 <% } %>
-<a href="index.html">Go back</a>
+<a href="index.html">Go back to the <em>index</em> page.</a>
+<br>
+<a href="greeting?jstl=true">Click here to list the <em>greetings</em> using <strong>JSTL</strong>!</a>
 </body>
 </html>

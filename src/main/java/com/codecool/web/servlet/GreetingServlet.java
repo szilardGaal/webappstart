@@ -20,6 +20,12 @@ public class GreetingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Greeting> greetings = service.getGreetings();
         req.setAttribute("greetings", greetings);
-        req.getRequestDispatcher("greeting.jsp").forward(req, resp);
+
+        boolean jstl = Boolean.valueOf(req.getParameter("jstl"));
+        if (jstl) {
+            req.getRequestDispatcher("greeting-jstl.jsp").forward(req, resp);
+        } else {
+            req.getRequestDispatcher("greeting.jsp").forward(req, resp);
+        }
     }
 }
