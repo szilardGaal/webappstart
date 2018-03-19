@@ -3,6 +3,8 @@ package com.codecool.web.service;
 import com.codecool.web.model.Greeting;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GreetingServiceTest {
@@ -13,11 +15,10 @@ class GreetingServiceTest {
         GreetingService service = new GreetingService();
 
         // when
-        Greeting greeting = service.getGreetings();
+        List<Greeting> greetings = service.getGreetings();
 
         // then
-        assertNotNull(greeting);
-        assertNotNull(greeting.getText());
-        assertEquals("Hi there traveller!", greeting.getText());
+        assertNotNull(greetings);
+        assertEquals(4, greetings.size());
     }
 }
