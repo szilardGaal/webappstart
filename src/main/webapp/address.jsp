@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.codecool.web.model.Greeting" %>
+<%@ page import="com.codecool.web.model.Address" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,12 +10,11 @@
 </head>
 <body>
 <h1>Greeting!</h1>
-<% List<Greeting> greetings = (List<Greeting>) request.getAttribute("greetings"); %>
-<% for (Greeting g : greetings) { %>
-    <p><%= g.getLang() %>: <%= g.getText() %></p>
+<% List<Address> addresses = (List) request.getAttribute("service"); %>
+<% for (Address a : addresses) { %>
+    <p><%= a.getEmail() %></p>
 <% } %>
 <a href="index.html">Go back to the <em>index</em> page.</a>
 <br>
-<a href="greeting?jstl=true">Click here to list the <em>greetings</em> using <strong>JSTL</strong>!</a>
 </body>
 </html>
